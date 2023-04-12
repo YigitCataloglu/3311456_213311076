@@ -31,7 +31,7 @@ class AnaEkranim extends StatelessWidget {
               ),
               child: Column(children: [
                 Text(
-                  'HESAPLARIM',
+                  'Hesaplarim',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
