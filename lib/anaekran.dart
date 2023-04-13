@@ -331,7 +331,7 @@ class _HizlislemlerState extends State<Hizlislemler> {
         children: [
           IconButton(
             onPressed: widget.onPressed,
-            // yapılacak işlemi girecen unutma
+           
 
             icon: Icon(widget.ikon),
             iconSize: 35,

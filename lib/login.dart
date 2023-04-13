@@ -17,10 +17,7 @@ class _GirisState extends State<Giris> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         decoration: BoxDecoration(
-            /*        image: DecorationImage(
-            image: AssetImage("assets/images/vog.png"),
-            fit: BoxFit.cover,
-          ), */
+         
             ),
         child: SafeArea(
           child: Form(
@@ -96,11 +93,8 @@ class _GirisState extends State<Giris> {
                     child: OutlinedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          String password = _parolaKontrol.text;
-                          String username = _kullaniciKontrol.text;
-                          // Kullanıcı doğrulama işlemi
-                          // Eğer doğruysa giriş yapılacak
-                          // Değilse hata mesajı verilecek
+                          String password = _parolaKontrol.text;             //DOĞRULAMA KISMI
+                          String username = _kullaniciKontrol.text;  
                           if (username == "123" && password == "123") {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -114,7 +108,7 @@ class _GirisState extends State<Giris> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                      'Parola Hatasi'), // BURAYI TASARLA BURASI HATALI GİRİŞ BLOĞU
+                                      'Parola Hatasi'), 
                                   content: Text('Lütfen parolanizi kontrol edip tekrar giriniz'),
                                   actions: <Widget>[
                                     TextButton(

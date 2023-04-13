@@ -71,7 +71,7 @@ Piyasa Değeri:101.500.000.000,00 ₺
                 ])),
             ElevatedButton(
                 child: Text(
-                    'Hisse Listesi'), // class ismi olacak burada o sayfaya yönlendirir
+                    'Hisse Listesi'), 
                 onPressed: () {
                   Navigator.push(
                     context,

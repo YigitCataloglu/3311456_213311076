@@ -133,10 +133,6 @@ class BankaBaslik extends StatelessWidget {
           ],
         ),
         body: BankaArayuz(),
-
-        /*    Center(
-          child: BankaArayuz(),
-        ), */
       ),
     );
   }
