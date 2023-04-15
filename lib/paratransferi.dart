@@ -67,7 +67,6 @@ class _GirisEkraniState extends State<GirisEkrani> {
           SizedBox(height: 8),
           TextFormField(
             controller: t2,
-            keyboardType: TextInputType.number,  // çalışmadı
             decoration: InputDecoration(
               hintText: 'Örn: 1500₺',
               border: OutlineInputBorder(
@@ -110,7 +109,7 @@ class _GirisEkraniState extends State<GirisEkrani> {
             },
             child: Text('Para Gönder'),
             style: ElevatedButton.styleFrom(
-              primary: Color(0xFF3F51B5),
+              primary: Color(0xFF3F51B5),               //onprimary buton rengi
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),

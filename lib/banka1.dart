@@ -14,7 +14,6 @@ class BankaBaslik extends StatelessWidget {
       home: Scaffold(
         drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
             children: [
               Column(
                 children: [

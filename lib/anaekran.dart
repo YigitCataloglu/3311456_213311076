@@ -41,7 +41,6 @@ class AnaEkranim extends StatelessWidget {
                 SizedBox(height: 10,),
                 InkWell(
                     onTap: () {  
-                      // NAVİGATÖR EKLEYECEN UNUTMA
             Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => KartBilgileri()),
@@ -99,9 +98,8 @@ class AnaEkranim extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.horizontal,   //yatay yönde kaydırılmayı sağlıyor
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Hizlislemler(
                           metin: 'Havale/EFT',
@@ -246,9 +244,9 @@ class HizmetlerKare extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Color.fromARGB(255, 100, 138, 134)
-                        .withOpacity(0.5),
-                    blurRadius: 25,
-                    offset: Offset(0, 4),
+                        .withOpacity(0.5),    
+                    blurRadius: 25,         //bulanıklık
+                    offset: Offset(0, 4),  //konum
                   )
                 ],),
 

@@ -16,9 +16,6 @@ class _GirisState extends State<Giris> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
-        decoration: BoxDecoration(
-         
-            ),
         child: SafeArea(
           child: Form(
             key: _formKey,
@@ -39,7 +36,6 @@ class _GirisState extends State<Giris> {
                   SizedBox(height: 60.0),
                   TextFormField(
                     controller: _kullaniciKontrol,
-                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Color.fromARGB(0, 111, 135, 144)
@@ -171,7 +167,7 @@ class _GirisState extends State<Giris> {
                       ),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(97, 111, 135, 144),
-                          side: BorderSide(
+                          side: BorderSide(                                      //buton çerçevesi
                               color: Color.fromARGB(255, 255, 255, 255),
                               width: 2.0),
                           shape: RoundedRectangleBorder(
