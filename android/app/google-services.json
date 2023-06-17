@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "996541540069",
+    "project_id": "deneme2-bebc0",
+    "storage_bucket": "deneme2-bebc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996541540069:android:e42b4fc797aa8a646dd60c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_deneme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996541540069-d5f5j9vhoomdng1ijjp3i1ub9tbbstai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebase_deneme",
+            "certificate_hash": "bb7e12e03a25707228efe9210274b248e3fca840"
+          }
+        },
+        {
+          "client_id": "996541540069-tp2enfjde0hhnvnu841b1931gmhld9u6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyfRN-Ux3Uk6ipoza9_XATQJ6gPQZYLOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996541540069-1fkhfukaecbd9fpkcnvm5mnf2gaa2kgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996541540069:android:9dda0364f6b35c1b6dd60c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_denemeleri_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996541540069-tp2enfjde0hhnvnu841b1931gmhld9u6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyfRN-Ux3Uk6ipoza9_XATQJ6gPQZYLOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996541540069-1fkhfukaecbd9fpkcnvm5mnf2gaa2kgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996541540069:android:ef11d64cc69289a16dd60c",
+        "android_client_info": {
+          "package_name": "com.example.vesis_bank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996541540069-tp2enfjde0hhnvnu841b1931gmhld9u6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyfRN-Ux3Uk6ipoza9_XATQJ6gPQZYLOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996541540069-1fkhfukaecbd9fpkcnvm5mnf2gaa2kgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'banka1.dart';
 
@@ -10,6 +11,55 @@ class _GirisState extends State<Giris> {
   final _formKey = GlobalKey<FormState>();
   final _kullaniciKontrol = TextEditingController();
   final _parolaKontrol = TextEditingController();
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+ 
+
+  void loginUserEmailAndPassword() async {
+    try {
+      var userCredential = await auth.signInWithEmailAndPassword(
+          email: _kullaniciKontrol.text, password: _parolaKontrol.text);
+      var myUser = userCredential.user;
+      if (!myUser!.emailVerified) {
+        await myUser.sendEmailVerification();
+      } else {
+        debugPrint(
+            'Kullanıcının e-postası onaylanmış, ilgili sayfaya gidebilir.');
+      }
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BankaBaslik()),
+      );
+      debugPrint(userCredential.toString());
+    } catch (e) {
+      showErroeMessage();
+      debugPrint(e.toString());
+    }
+  }
+
+  void showErroeMessage() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Email veya Parola Hatasi'),
+          content:
+              Text('Lütfen bilgilerinizi kontrol edip tekrar girermisiniz'),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                'Tamam',
+                style: TextStyle(color: Color.fromARGB(255, 85, 85, 85)),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +90,7 @@ class _GirisState extends State<Giris> {
                       filled: true,
                       fillColor: Color.fromARGB(0, 111, 135, 144)
                           .withOpacity(0.7), // arka kısım renk
-                      hintText: "Müsteri No/TCKN",
+                      hintText: "Müşteri No/TCKN",
                       prefixIcon: Icon(Icons.person,
                           color: Color.fromARGB(255, 255, 255, 255)),
                       border: OutlineInputBorder(
@@ -51,7 +101,7 @@ class _GirisState extends State<Giris> {
                     cursorColor: Colors.black,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Musteri No/TCKN bos birakilamaz";
+                        return "Müşteri No/TCKN boş bırakılamaz";
                       }
                       return null;
                     },
@@ -77,7 +127,7 @@ class _GirisState extends State<Giris> {
                     cursorColor: Colors.black,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Parola bos birakilamaz!";
+                        return "Parola boş bırakılamaz!";
                       }
                       return null;
                     },
@@ -89,36 +139,7 @@ class _GirisState extends State<Giris> {
                     child: OutlinedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          String password = _parolaKontrol.text;             //DOĞRULAMA KISMI
-                          String username = _kullaniciKontrol.text;  
-                          if (username == "123" && password == "123") {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => BankaBaslik(),
-                              ),
-                            );
-                            // Giriş işlemi
-                          } else {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text(
-                                      'Parola Hatasi'), 
-                                  content: Text('Lütfen parolanizi kontrol edip tekrar giriniz'),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      
-                                      child: Text('Tamam',style: TextStyle(color: Color.fromARGB(255, 85, 85, 85)),),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          }
+                          loginUserEmailAndPassword();
                         }
                       },
                       style: OutlinedButton.styleFrom(
@@ -134,7 +155,7 @@ class _GirisState extends State<Giris> {
                             horizontal: 50.0, vertical: 15.0),
                       ),
                       child: Text(
-                        "Giris Yap",
+                        "Giriş Yap",
                         style: TextStyle(
                           fontSize: 18.0,
                         ),
@@ -147,7 +168,7 @@ class _GirisState extends State<Giris> {
                     ),
                     onPressed: () {},
                     child: Text(
-                      "Sifremi Unuttum?",
+                      "Şifremi Unuttum?",
                       style: TextStyle(
                         fontFamily: 'PT Serif',
                         color: Color.fromARGB(255, 130, 120, 119),
@@ -158,16 +179,22 @@ class _GirisState extends State<Giris> {
                     width: 200,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BankaBaslik()),
+                        );
+                      },
                       child: Text(
-                        'Musteri Ol',
+                        'Müşteri Ol',
                         style: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             fontSize: 15),
                       ),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(97, 111, 135, 144),
-                          side: BorderSide(                                      //buton çerçevesi
+                          side: BorderSide(
                               color: Color.fromARGB(255, 255, 255, 255),
                               width: 2.0),
                           shape: RoundedRectangleBorder(

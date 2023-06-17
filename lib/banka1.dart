@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'hesaphareketleri.dart';
 import 'hisseler/tumhisseler.dart';
@@ -6,7 +7,15 @@ import 'anaekran.dart';
 import 'hisseler/hisselistesi.dart';
 import 'login.dart';
 
+
+
 class BankaBaslik extends StatelessWidget {
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+   void signout() async {
+    print('oturum kapatildi');
+    await auth.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -122,6 +131,7 @@ class BankaBaslik extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
+                signout();
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Giris()),
@@ -136,6 +146,7 @@ class BankaBaslik extends StatelessWidget {
     );
   }
 }
+
 
 class BankaArayuz extends StatefulWidget {
   @override
