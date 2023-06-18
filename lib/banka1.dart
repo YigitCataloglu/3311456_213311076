@@ -5,7 +5,7 @@ import 'hisseler/tumhisseler.dart';
 import 'paratransferi.dart';
 import 'anaekran.dart';
 import 'hisseler/hisselistesi.dart';
-import 'login.dart';
+import 'giris_kayit/login.dart';
 
 
 

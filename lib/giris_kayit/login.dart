@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'banka1.dart';
+import '../banka1.dart';
+import 'kayitol.dart';
 
 class Giris extends StatefulWidget {
   @override
@@ -9,11 +10,9 @@ class Giris extends StatefulWidget {
 
 class _GirisState extends State<Giris> {
   final _formKey = GlobalKey<FormState>();
-  final _kullaniciKontrol = TextEditingController();
-  final _parolaKontrol = TextEditingController();
+  final _kullaniciKontrol = TextEditingController(text: 'yigit1@gmail.com');
+  final _parolaKontrol = TextEditingController(text: '123456');
   FirebaseAuth auth = FirebaseAuth.instance;
-
- 
 
   void loginUserEmailAndPassword() async {
     try {
@@ -21,6 +20,7 @@ class _GirisState extends State<Giris> {
           email: _kullaniciKontrol.text, password: _parolaKontrol.text);
       var myUser = userCredential.user;
       if (!myUser!.emailVerified) {
+        debugPrint('Dogrulama epostasi gonderildi');
         await myUser.sendEmailVerification();
       } else {
         debugPrint(
@@ -32,12 +32,12 @@ class _GirisState extends State<Giris> {
       );
       debugPrint(userCredential.toString());
     } catch (e) {
-      showErroeMessage();
+      showErrorMessage();
       debugPrint(e.toString());
     }
   }
 
-  void showErroeMessage() {
+  void showErrorMessage() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -85,12 +85,13 @@ class _GirisState extends State<Giris> {
                   ),
                   SizedBox(height: 60.0),
                   TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     controller: _kullaniciKontrol,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Color.fromARGB(0, 111, 135, 144)
                           .withOpacity(0.7), // arka kısım renk
-                      hintText: "Müşteri No/TCKN",
+                      hintText: "E-posta",
                       prefixIcon: Icon(Icons.person,
                           color: Color.fromARGB(255, 255, 255, 255)),
                       border: OutlineInputBorder(
@@ -182,8 +183,7 @@ class _GirisState extends State<Giris> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => BankaBaslik()),
+                          MaterialPageRoute(builder: (context) => MusteriOl()),
                         );
                       },
                       child: Text(
@@ -193,13 +193,14 @@ class _GirisState extends State<Giris> {
                             fontSize: 15),
                       ),
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(97, 111, 135, 144),
-                          side: BorderSide(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              width: 2.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          )),
+                        backgroundColor: Color.fromARGB(97, 111, 135, 144),
+                        side: BorderSide(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            width: 2.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
                     ),
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Widgetlar/karttasarim.dart';
+import 'api/doviz.dart';
 import 'hesaphareketleri.dart';
 import 'paratransferi.dart';
 import 'portfoy/portfoy.dart';
@@ -180,7 +181,10 @@ class AnaEkranim extends StatelessWidget {
                     ),
                   ),
                   InkWell(onTap: () {
-                    
+                       Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DovizListesi()),
+              );
                   },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8, bottom: 8, right: 8),
