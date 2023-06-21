@@ -1,21 +1,25 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vesis_bank/hakkimizda.dart';
+import 'package:vesis_bank/varliklarim.dart';
+import 'api/doviz.dart';
+import 'fatura.dart';
 import 'hesaphareketleri.dart';
+import 'hesaplarim.dart';
 import 'hisseler/tumhisseler.dart';
 import 'paratransferi.dart';
 import 'anaekran.dart';
 import 'hisseler/hisselistesi.dart';
 import 'giris_kayit/login.dart';
 
-
-
 class BankaBaslik extends StatelessWidget {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-   void signout() async {
+  void signout() async {
     print('oturum kapatildi');
     await auth.signOut();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,7 +64,7 @@ class BankaBaslik extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TumHisseler()),
+                    MaterialPageRoute(builder: (context) => canliBorsa()),
                   );
                 },
               ),
@@ -78,42 +82,56 @@ class BankaBaslik extends StatelessWidget {
                 leading: Icon(Icons.account_balance),
                 title: Text('Hesaplarım'),
                 onTap: () {
-                  
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HesaplarSayfasi()),
+                  );
                 },
               ),
               ListTile(
                 leading: Icon(Icons.credit_card),
                 title: Text('Kartlarım'),
-                onTap: () {
-
-                },
+                onTap: () {},
               ),
               ListTile(
                 leading: Icon(Icons.account_balance_wallet),
                 title: Text('Varlıklarım'),
                 onTap: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VarliklarSayfasi()),
+                  );
                 },
               ),
               ListTile(
                 leading: Icon(Icons.monetization_on),
                 title: Text('Döviz Alım Satımı'),
                 onTap: () {
-
-                },
-              ),      
-              ListTile(
-                leading: Icon(Icons.payment),
-                title: Text('Ödemeler'),
-                onTap: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DovizListesi()),
+                  );
                 },
               ),
-               ListTile(
-                leading: Icon(Icons.qr_code),
-                title: Text('QR İşlemleri'),
+              ListTile(
+                leading: Icon(Icons.description),
+                title: Text('Faturalar'),
                 onTap: () {
-
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FaturaSayfasi()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.assignment),
+                title: Text('Hakkimizda'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HakkimizdaSayfasi()),
+                  );
                 },
               ),
             ],
@@ -146,7 +164,6 @@ class BankaBaslik extends StatelessWidget {
     );
   }
 }
-
 
 class BankaArayuz extends StatefulWidget {
   @override

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'Widgetlar/karttasarim.dart';
 import 'api/doviz.dart';
+import 'fatura.dart';
+import 'varliklarim.dart';
 import 'hesaphareketleri.dart';
 import 'paratransferi.dart';
 import 'portfoy/portfoy.dart';
 import 'hisseler/tumhisseler.dart';
 import 'Widgetlar/kartbilgileri.dart';
+import 'sql/card_aplication.dart';
 
 
 class AnaEkranim extends StatelessWidget {
@@ -114,7 +117,11 @@ class AnaEkranim extends StatelessWidget {
                           },
                         ),
                         Hizlislemler(metin: 'Fatura', ikon: Icons.description,onPressed: () {
-                           
+                           Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FaturaSayfasi()),
+                            );
                           },),
                         Hizlislemler(metin: 'Portföy', ikon: Icons.show_chart,onPressed: () {
 
@@ -129,6 +136,12 @@ class AnaEkranim extends StatelessWidget {
                         Hizlislemler(
                             metin: 'Kart Başvuru',
                             ikon: Icons.add_card_rounded,onPressed: () {
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CardApplicationPage()),
+                            );
+                              
                               
                             },),
                         Hizlislemler(
@@ -172,7 +185,7 @@ class AnaEkranim extends StatelessWidget {
                   InkWell(onTap: () {
                     Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TumHisseler()),
+                MaterialPageRoute(builder: (context) => canliBorsa()),
               );
                   },
                     child: Padding(
@@ -204,7 +217,10 @@ class AnaEkranim extends StatelessWidget {
                       child: HizmetlerKare(logo: 'assets/images/kkart.png',baslik: 'KARTLARIM',altbaslik: ''),
                     ),
                   ),
-                  InkWell(onTap: () {
+                  InkWell(onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VarliklarSayfasi()),
+              );
                     
                   },
                     child: Padding(

@@ -54,12 +54,15 @@ class _DovizListesiState extends State<DovizListesi> {
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(doviz.name,),
+                    Text(doviz.name,style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('Alış: ${doviz.buying}'),
-                        Text('Satış: ${doviz.selling}'),
+                        Text('Alış: ${doviz.buying}',style: TextStyle(fontSize: 14),),
+                        Text('Satış: ${doviz.selling}',style: TextStyle(fontSize: 14),),
                       ],
                     ),
                   ],
@@ -72,11 +75,18 @@ class _DovizListesiState extends State<DovizListesi> {
           return SizedBox(height: 5.0);
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           dovizleriGetir();
         },
+        label: Text(
+          'Yenile',
+          style: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+        icon: Icon(Icons.refresh),
+        backgroundColor: Color.fromARGB(255, 112, 112, 112).withOpacity(0.6),
       ),
     );
   }
@@ -90,7 +100,7 @@ class _DovizListesiState extends State<DovizListesi> {
     var url = Uri.parse('https://api.collectapi.com/economy/allCurrency');
     var headers = {
       'content-type': 'application/json',
-      'authorization': 'apikey 2ylq6r2bXJ2C5pFhZZynid:1u7wkR71ncBpVLxiRvgeuZ',
+      'authorization': 'apikey 1XElDvGIgmt2UE3MvmzV9p:6OCZbNH1a064S5L2vmIdYI',
     };
 
     try {
@@ -108,9 +118,7 @@ class _DovizListesiState extends State<DovizListesi> {
           if (name != null) {
             var doviz = Doviz(name: name, buying: buying, selling: selling);
             guncellenenDovizler.add(doviz);
-            print(doviz.name);
-            print(doviz.buying);
-            print(doviz.selling);
+          
           }
         }
 

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vesis_bank/hisseler/hissebilgiwidget.dart';
-import '/hisseler/ereglbilgi.dart';
-import '/hisseler/sisebilgi.dart';
-import '/hisseler/toasobilgi.dart';
 import '../banka1.dart';
-import 'frotobilgi.dart';
 
 class Borsa extends StatelessWidget {
   @override
@@ -79,7 +75,7 @@ Piyasa Değeri:132.269.582.945,42 ₺
                     context,
                     MaterialPageRoute(
                         builder: (context) => HisseTanitim(
-                              logo: 'assets/images/sisecam_yatay_logo.png',
+                              logo: 'assets/images/erdemir-logo.png',
                               HisseBilgi:
                                   '''Erdemir, 1960'ta devlet tarafından Karadeniz Ereğli'de kurulan ve 2006'da özelleştirilerek OYAK'a devredilen demir ve çelik fabrikası. Şirket 11 Mayıs 1960 tarihinde resmen kurulmuş olup fabrika kurulması 42 ay sürmüş ve 15 Mayıs 1965'te işletmeye alınmıştır. İlk kurulduğunda kamu kuruluşu olan Erdemir, 2006 yılından itibaren Oyak Grubu bünyesinde faaliyet göstermektedir. Türkiye'nin en büyük yassı demir üreticisidir''',
                               HisseBilgi2: '''
@@ -104,7 +100,7 @@ Piyasa Değeri:121.940.000.000,00 ₺
                     context,
                     MaterialPageRoute(
                         builder: (context) => HisseTanitim(
-                              logo: 'assets/images/sisecam_yatay_logo.png',
+                              logo: 'assets/images/fordotosan.png',
                               HisseBilgi:  '''Ford Otosan, 1959 yılında Vehbi Koç tarafından Acıbadem, Üsküdar'da kurulmuş Türk otomotiv şirketidir.
 
 1997 yılında Koç Holding ve Ford hisselerinin eşitlenmesiyle Ford Otosan kurulmuştur. 1966-1984 yılları arasında Anadol marka araçları üreten Otosan, ilerleyen yıllarda Ford'un Taunus, Escort, Transit, Connect ve Courier modellerini üretmiştir. Ford Otosan bünyesinde İhsaniye Merkez, Gölcük, Yeniköy Merkez, Başiskele, Kocaeli ve İnönü, Eskişehir Fabrikaları, Cevizli, Kartal Yedek parça Merkezi ve Akpınar, Sancaktepe AR-GE Merkezi'nde toplamda 10.000 üzerinde kişi çalışmaktadır. Ford Otosan araç ihracatının yanı sıra son 5 senedir 320 milyon doların üzerinde mühendislik ihracatı yapmıştır. ''',
