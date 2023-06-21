@@ -10,8 +10,8 @@ class Giris extends StatefulWidget {
 
 class _GirisState extends State<Giris> {
   final _formKey = GlobalKey<FormState>();
-  final _kullaniciKontrol = TextEditingController(text: 'yigit1@gmail.com');
-  final _parolaKontrol = TextEditingController(text: '123456');
+  final _kullaniciKontrol = TextEditingController();
+  final _parolaKontrol = TextEditingController();
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void loginUserEmailAndPassword() async {

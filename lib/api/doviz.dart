@@ -100,7 +100,7 @@ class _DovizListesiState extends State<DovizListesi> {
     var url = Uri.parse('https://api.collectapi.com/economy/allCurrency');
     var headers = {
       'content-type': 'application/json',
-      'authorization': 'apikey 1XElDvGIgmt2UE3MvmzV9p:6OCZbNH1a064S5L2vmIdYI',
+      'authorization': 'apikey 0C0vkOJkUvSVko5K1kN8Ns:1MihQ8zJPv8fKhhZK0htWe',
     };
 
     try {

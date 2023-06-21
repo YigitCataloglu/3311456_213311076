@@ -152,7 +152,7 @@ class _canliBorsaState extends State<canliBorsa> {
     var url = Uri.parse('https://api.collectapi.com/economy/liveBorsa');
     var headers = {
       'content-type': 'application/json',
-      'authorization': 'apikey 1XElDvGIgmt2UE3MvmzV9p:6OCZbNH1a064S5L2vmIdYI',
+      'authorization': 'apikey 3M2KUqI3dD3GaJTElWLx9P:54FJFS05BbY3itPS22gezd',
     };
 
     try {
