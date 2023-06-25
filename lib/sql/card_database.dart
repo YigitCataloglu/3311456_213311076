@@ -8,18 +8,18 @@ class DatabaseHelper {
 
   static Database? _database;
 
-  DatabaseHelper._privateConstructor();
+  DatabaseHelper._privateConstructor();  //yalnızca instance üzerinden erişim (ekleme,silme,güncelleme)
 
   Future<Database> get database async {
     if (_database != null) {
-      return _database!;
+      return _database!;              //mevcut veritabanı başlatma
     }
 
-    _database = await _initDatabase();
+    _database = await _initDatabase();   // veri tabanı başlatma
     return _database!;
   }
 
-  Future<Database> _initDatabase() async {
+  Future<Database> _initDatabase() async {    
     String path = join(await getDatabasesPath(), 'card_application.db');
     return await openDatabase(
       path,

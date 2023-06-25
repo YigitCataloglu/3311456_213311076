@@ -44,7 +44,7 @@ class _GirisState extends State<Giris> {
         return AlertDialog(
           title: Text('Email veya Parola Hatasi'),
           content:
-              Text('Lütfen bilgilerinizi kontrol edip tekrar girermisiniz'),
+              Text('Lütfen bilgilerinizi kontrol edip tekrar giriniz'),
           actions: <Widget>[
             TextButton(
               child: Text(
@@ -102,7 +102,7 @@ class _GirisState extends State<Giris> {
                     cursorColor: Colors.black,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Müşteri No/TCKN boş bırakılamaz";
+                        return "E-posta boş bırakılamaz";
                       }
                       return null;
                     },
