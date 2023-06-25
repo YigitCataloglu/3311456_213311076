@@ -84,5 +84,6 @@ class CardInfo {
       map['iban'],
       map['expiryDate'],
     );
+    
   }
 }
